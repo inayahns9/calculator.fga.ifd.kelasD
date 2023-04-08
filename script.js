@@ -58,7 +58,7 @@ const calculate = () => {
     switch(calculationOperator) {
         case '+' :
             result = parseFloat(prevNumber) + parseFloat(currentNumber)
-            break
+            break 
         case '-':
             result = prevNumber - currentNumber
             break
@@ -69,11 +69,17 @@ const calculate = () => {
             result = prevNumber / currentNumber
             break
         case '%':
-            result = prevNumber / 100 
+            if(result = prevNumber / 100 * currentNumber){
+                result = prevNumber / 100 * currentNumber
+            }else {
+                result = prevNumber / 100
+            } 
             break
         default:
             return
-    }
+
+    }       
+
     currentNumber = result
     calculationOperator = ''
 }
